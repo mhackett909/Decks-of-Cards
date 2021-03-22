@@ -37,7 +37,7 @@ public class Main {
         //Reset all objects
         for (int i = 0; i < numPlayers; i++)
             players[i].resetHand();
-        testDeck.init();
+        testDeck.init(1);
         //Shuffle, re-deal, and print
         testDeck.shuffle();
         dealTracker = 0;

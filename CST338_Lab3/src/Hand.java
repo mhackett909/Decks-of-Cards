@@ -4,7 +4,9 @@ public class Hand
    Card[] myCards;
    int numCards;
    public Hand()
-   {  
+   {
+      numCards = 0;
+      myCards = new Card[MAX_CARDS];
    }
    public void resetHand()
    {
