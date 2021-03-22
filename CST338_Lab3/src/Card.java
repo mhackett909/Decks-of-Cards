@@ -67,7 +67,7 @@ public class Card
       }
       return isValid;
    }
-   //Phase 1
+   /*Phase 1
    public static void main(String[] args)
    {
       Card card1 = new Card('1', Card.Suit.DIAMONDS);
@@ -84,7 +84,7 @@ public class Card
       System.out.println(card1.toString());
       System.out.println(card2.toString());
       System.out.println(card3.toString());
-   }
+   }*/
 }
 
 
