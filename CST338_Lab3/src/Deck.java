@@ -101,8 +101,6 @@ public class Deck {
     /**
      * Accessor for an individual card.  Returns a card with errorFlag = true if
      * k is bad.  Also returns an object copy, not a reference copy.
-     * 
-     * TODO: implement errorflag; need to ask about this
      * @param k
      */
     public Card inspectCard(int k) {
