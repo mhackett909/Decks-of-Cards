@@ -4,9 +4,7 @@
  * 
  * Deck: class object that will contain the source of all Card objects. Contains
  * and array of Card objects <code>cards[]</code>. It will contain a multiple 
- * of 52 cards, as some games rely on multiple decks. 
- * 
- * @author Michael Hackett, Katherine Vickstrom, Mike Limpus, Deen Altawil
+ * of 52 cards, as some games rely on multiple decks.
  */
 public class Deck {
     // Members and constants
@@ -15,7 +13,6 @@ public class Deck {
     private static Card[] masterPack = new Card[52]; // contains every card type
     private Card[] cards;
     private int topCard; 
-    
 
     // Public Methods
     /**
