@@ -11,16 +11,38 @@
 public class Deck {
     // Members and constants
     public static final int MAX_CARDS = 312;    // 312 = 6 * 52, so, six decks
-    private Card[] masterPack = new Card[52];   // contains every card type
+    private static boolean allocated = false; 
+    private static Card[] masterPack = new Card[52];   // contains every card type
     private Card[] cards;
     private int topCard; 
+    
 
     // Public Methods
-    // Constructor will populate the arrays
+    /**
+     * Default Constructor assumes 1 pack
+     */
+    public Deck() {
+        allocateMasterPack();
+        init(1);
+    }
+
+    /**
+     * Constructor will populate the arrays
+     * @param numPacks
+     */
     public Deck(int numPacks) {
         allocateMasterPack();        
         init(numPacks);
     }
+
+/*  TODO probably remove this, I don't think we need this
+    public Deck(Deck deck) {
+        cards = deck.cards;
+        topCard = deck.topCard;
+        if (allocated == false) {
+            allocateMasterPack();
+        }
+    } */
 
     /**
      * fill the cards array with Card objects from the masterPack
@@ -37,16 +59,59 @@ public class Deck {
                 j = 0;
             }
         }
-        
     }
 
+    /**
+     * Mixes up the cards with the help of the standard random number generator
+     */
+    public void shuffle() { 
+        for (int i = 0; i < cards.length; ++i) {
+           int randIndex = (int) (Math.random() * 100);
+           // TODO Finish this
+        }
+    }
+
+    /**
+     * dealCard returns and removes the card in the top occupied position of 
+     * cards[]. Make sure there are still cards available.  This is an object
+     * copy, not a reference copy, since the source of the Card might destroy or
+     * change its data after it is sent out.
+     * @return A card or null if none available
+     */
+
     public Card dealCard() {
+
         return null;
     }
 
-    public void shuffle() { }
+
+    public int getTopCard() {
+        return topCard;
+    }
+    
+    /**
+     * 
+     * @param k
+     */
+    public Card inspectCard(int k) {
+        if (k < 0 || k > cards.length)
+            return new Card(cards[k].getValue(), cards[k].getSuit());
+    }
+
     private static void allocateMasterPack() {
-        // TODO Write me pls
+        if(allocated == false) {
+            char[] values = { 'A', '2', '3', '4', '5', '6', '7', '8', '9', 'T',
+                 'J', 'Q', 'K'};
+            Card.Suit[] suits = { Card.Suit.CLUBS, Card.Suit.DIAMONDS, 
+                Card.Suit.HEARTS, Card.Suit.SPADES };
+            int k = 0; // Reference for the location in masterPack[]
+            for (int i = 0; i < 4; ++i) {
+                for(int j = 0; j < 13; ++j) {
+                    masterPack[k] = new Card(values[j], suits[i]);
+                }
+            }
+            allocated = true;
+        }
     }
 
 }
