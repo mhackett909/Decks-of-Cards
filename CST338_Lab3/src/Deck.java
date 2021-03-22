@@ -13,7 +13,7 @@ public class Deck {
     public static final int MAX_CARDS = 312;    // 312 = 6 * 52, so, six decks
     private Card[] masterPack = new Card[52];   // contains every card type
     private Card[] cards;
-    int topCard; 
+    private int topCard; 
 
     // Public Methods
     // Constructor will populate the arrays
@@ -22,8 +22,22 @@ public class Deck {
         init(numPacks);
     }
 
+    /**
+     * fill the cards array with Card objects from the masterPack
+     * @param numPacks
+     */
     public void init(int numPacks) {
         cards = new Card[(numPacks * 52)]; 
+        // an 'iterator' that should not be > 52 for masterPack reference
+        int j = 0;      
+        for (int i = 0; i < cards.length; ++i) {
+            cards[i] = masterPack[j];
+            j++;
+            if (i % 52 == 0 && i != 0) { // Start at masterPack[0] again
+                j = 0;
+            }
+        }
+        
     }
 
     public Card dealCard() {
