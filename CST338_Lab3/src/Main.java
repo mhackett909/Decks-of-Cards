@@ -13,12 +13,10 @@ import java.util.Scanner;
  * @author Michael Hackett, Katherine Vickstrom, Mike Limpus, Deen Altawil
  */
 public class Main {
-    Scanner userInput = new Scanner(System.in);
+    private static Scanner userInput = new Scanner(System.in);
     public static final int MAX_PLAYERS = 10;
     public static void main(String[] args) {
-        new Main();
-    }
-    public Main() {
+        //Phase 4 Test
         Deck testDeck = new Deck();
         Hand[] players = new Hand[MAX_PLAYERS];
         int numPlayers = getNumPlayers();
@@ -57,7 +55,7 @@ public class Main {
      * validating user input.
      * @return The inputted number of players.
      */
-    private int getNumPlayers() {
+    private static int getNumPlayers() {
         int numPlayers;
         System.out.println("How many players? (1 - 10)");
         try {
