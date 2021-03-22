@@ -1,7 +1,12 @@
-//Assignment 3:
-/*Create a deck of cards program that includes several types of classes.
- *Each class contains it's own function within the program.
- *4 phases are to be created and tested.
+/**
+ * Lab 3: Decks of Cards
+ * CST 338: Software Design (Spring B 2021)
+ * 
+ * Create a deck of cards program that includes several types of classes.
+ * Each class contains it's own function within the program.
+ * 4 phases are to be created and tested.
+ * 
+ * @author Michael Hackett, Katherine Vickstrom, Mike Limpus, Deen Altawil
  */
 
 public class Card
