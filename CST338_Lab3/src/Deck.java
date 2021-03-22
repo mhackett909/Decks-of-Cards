@@ -12,7 +12,7 @@ public class Deck {
     // Members and constants
     public static final int MAX_CARDS = 312;    // 312 = 6 * 52, so, six decks
     private static boolean allocated = false; 
-    private static Card[] masterPack = new Card[52];   // contains every card type
+    private static Card[] masterPack = new Card[52]; // contains every card type
     private Card[] cards;
     private int topCard; 
     
@@ -80,7 +80,14 @@ public class Deck {
      */
 
     public Card dealCard() {
-
+        Card dealtCard;
+        for (int i = 0; i < cards.length; ++i) {
+            if (cards[i] != null) {
+                dealtCard = cards[i];
+                cards[i] = null;
+                return new Card(dealtCard.getValue(), dealtCard.getSuit());
+            }
+        }
         return null;
     }
 
@@ -90,11 +97,13 @@ public class Deck {
     }
     
     /**
+     * Accessor for an individual card.  Returns a card with errorFlag = true if
+     * k is bad.  Also returns an object copy, not a reference copy.
      * 
+     * TODO: implement errorflag; need to ask about this
      * @param k
      */
     public Card inspectCard(int k) {
-        if (k < 0 || k > cards.length)
             return new Card(cards[k].getValue(), cards[k].getSuit());
     }
 
