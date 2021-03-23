@@ -14,7 +14,7 @@ public class Deck {
     private static boolean allocated = false; 
     private static Card[] masterPack = new Card[52]; // contains every card type
     private Card[] cards;
-    private int topCard = 0; 
+    private int topCard;
 
     // Public Methods
     /**
@@ -39,7 +39,8 @@ public class Deck {
      * @param numPacks
      */
     public void init(int numPacks) {
-        cards = new Card[(numPacks * 52)]; 
+        cards = new Card[(numPacks * 52)];
+        topCard = 0;
         // an 'iterator' that should not be > 52 for masterPack reference
         int j = 0;      
         for (int i = 0; i < cards.length; ++i) {
@@ -81,7 +82,8 @@ public class Deck {
      */
 
     public Card dealCard() {
-        if (cards[topCard] != null) {
+        if (topCard == masterPack.length) return null;
+        else if (cards[topCard] != null) {
             Card dealtCard =        // Make an object copy of the top card
                 new Card(cards[topCard].getValue(), cards[topCard].getSuit());
             cards[topCard] = null;  // Remove the top card 

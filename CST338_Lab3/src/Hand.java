@@ -70,8 +70,7 @@ public class Hand
          }
          else
          {
-            str += myCards[i].getValue() + " of " + 
-                  myCards[i].getSuit() + ", ";
+            str += myCards[i].getValue() + " of " + myCards[i].getSuit() + ", ";
          }
       }
       return str;
@@ -84,7 +83,7 @@ public class Hand
    /**
     * An accessor method for a card at index k.
     * If the requested card does not exist, return
-    * an invalid card. Returns an object copy.
+    * an invalid card.
     *
     * @param k The array index
     * @return The card at index k or an invalid card

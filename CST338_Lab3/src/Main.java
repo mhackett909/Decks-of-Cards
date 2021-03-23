@@ -28,7 +28,7 @@ public class Main {
         //While the deck still has cards, deal to each player
         while ((newCard = testDeck.dealCard()) != null) {
             players[dealTracker++].takeCard(newCard);
-            if (dealTracker > MAX_PLAYERS) dealTracker = 0;
+            if (dealTracker == numPlayers) dealTracker = 0;
         }
         //Print the hands
         System.out.println("Hands from an unshuffled deck:");
@@ -43,7 +43,7 @@ public class Main {
         dealTracker = 0;
         while ((newCard = testDeck.dealCard()) != null) {
             players[dealTracker++].takeCard(newCard);
-            if (dealTracker > MAX_PLAYERS) dealTracker = 0;
+            if (dealTracker == numPlayers) dealTracker = 0;
         }
         System.out.println("Hands from a shuffled deck:");
         for (int i = 0; i < numPlayers; i++)
