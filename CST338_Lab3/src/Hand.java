@@ -34,7 +34,7 @@ public class Hand
     */
    public boolean takeCard(Card card)
    {
-      if(card.errorFlag() == true || card == null || numCards > MAX_CARDS)
+      if(card.errorFlag() == true || card == null || numCards == MAX_CARDS)
       {
          return false;
       }
@@ -99,33 +99,4 @@ public class Hand
          return new Card(myCards[k].getValue(), myCards[k].getSuit());
       }
    }
-   /*
-   Phase 2 main program to test Hand class
-   public static void main(String[] args)
-   {
-      Card card1 = new Card('2', Card.Suit.DIAMONDS);
-      Card card2 = new Card('K', Card.Suit.SPADES);
-      Card card3 = new Card('J', Card.Suit.CLUBS);
-      Card card4 = new Card('Q', Card.Suit.HEARTS);
-      Card card5 = new Card('9', Card.Suit.CLUBS);
-      Hand hand = new Hand();
-      for(int i = 0; i < 10; i++)
-      {
-         hand.takeCard(card1);
-         hand.takeCard(card2);
-         hand.takeCard(card3);
-         hand.takeCard(card4);
-         hand.takeCard(card5);
-      }
-      System.out.println("Hand = ( " + hand.toString() + " )");
-      System.out.println("Testing inspectCard()\n" + 
-            hand.inspectCard(0).toString());
-      System.out.println(hand.inspectCard(-1).toString());
-      for(int i = 0; i < hand.MAX_CARDS; i++)
-      {
-         System.out.println("Playing " + hand.playCard());
-      }
-      System.out.println("Hand = ( " + hand.toString() + " )");
-   }
-   */
 }

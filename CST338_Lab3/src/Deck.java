@@ -82,7 +82,7 @@ public class Deck {
      */
 
     public Card dealCard() {
-        if (topCard == masterPack.length) return null;
+        if (topCard == cards.length) return null;
         else if (cards[topCard] != null) {
             Card dealtCard =        // Make an object copy of the top card
                 new Card(cards[topCard].getValue(), cards[topCard].getSuit());
@@ -138,34 +138,5 @@ public class Deck {
             }
             allocated = true;
         }
-    }
-
-    public static void main(String[] args) {
-        // Test Driver
-        // Test 1 - Deck of 2 packs, unshuffled then shuffled
-        Deck deck = new Deck(2); //Declare a 2-pack deck
-        for (int i = 0; i < deck.cards.length; ++i) {
-            System.out.print(deck.dealCard().toString() + " | ");
-        }
-        System.out.println("-------------------------------------------------");
-        deck = new Deck(2);
-        deck.shuffle();
-        for (int i = 0; i < deck.cards.length; ++i) {
-            System.out.print(deck.dealCard().toString() + " | ");
-        }
-        System.out.println("-------------------------------------------------");
-
-        // Test 2 - Deck of 1 pack, unshuffled then shuffled
-        Deck deck2 = new Deck(1); //Declare a 1-pack deck
-        for (int i = 0; i < deck2.cards.length; ++i) {
-            System.out.print(deck2.dealCard().toString() + " | ");
-        }
-        System.out.println("-------------------------------------------------");
-        deck2 = new Deck(1);
-        deck2.shuffle();
-        for (int i = 0; i < deck2.cards.length; ++i) {
-            System.out.print(deck2.dealCard().toString() + " | ");
-        }
-        System.out.println("-------------------------------------------------");
     }
 }

@@ -102,24 +102,6 @@ public class Card
       }
       return isValid;
    }
-   /*Phase 1
-   public static void main(String[] args)
-   {
-      Card card1 = new Card('1', Card.Suit.DIAMONDS);
-      Card card2 = new Card('K', Card.Suit.SPADES);
-      Card card3 = new Card('J', Card.Suit.CLUBS);
-
-      System.out.println(card1.toString());
-      System.out.println(card2.toString());
-      System.out.println(card3.toString());
-
-      card1.set('Q', Card.Suit.DIAMONDS);
-      card2.set('1', Card.Suit.SPADES);
-
-      System.out.println(card1.toString());
-      System.out.println(card2.toString());
-      System.out.println(card3.toString());
-   }*/
 }
 
 
