@@ -11,6 +11,7 @@ import java.util.Random;
 public class Deck {
     // Members and constants
     public static final int MAX_CARDS = 312;    // 312 = 6 * 52, so, six decks
+    public static final int MAX_PACKS = 6;
     private static boolean allocated = false; 
     private static Card[] masterPack = new Card[52]; // contains every card type
     private Card[] cards;
@@ -39,6 +40,8 @@ public class Deck {
      * @param numPacks
      */
     public void init(int numPacks) {
+        if (numPacks < 1) numPacks = 1;
+        else if (numPacks > MAX_PACKS) numPacks = MAX_PACKS;
         cards = new Card[(numPacks * 52)];
         topCard = 0;
         // an 'iterator' that should not be > 52 for masterPack reference

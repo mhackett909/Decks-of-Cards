@@ -53,7 +53,7 @@ public class Hand
     */
    public Card playCard()
    {
-      return new Card(myCards[--numCards].getValue(), myCards[numCards].getSuit());
+      return (numCards > 0 ? new Card(myCards[--numCards].getValue(), myCards[numCards].getSuit()): null);
    }
    /**
     * Method to return the full hand as a string
